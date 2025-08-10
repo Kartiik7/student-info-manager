@@ -141,7 +141,7 @@ document.getElementById("student-form").addEventListener("submit", async functio
             const formData = new FormData(this);
             
             // Submit to backend server
-            const response = await fetch('http://localhost:3000/submit', {
+            const response = await fetch('https://student-info-manager-seqh.onrender.com/submit', {
                 method: 'POST',
                 body: formData
             });
