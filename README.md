@@ -51,7 +51,7 @@ student-data-collection/
 
 ### 1️⃣ Clone the repository
 git clone https://github.com/kartiik7/student-info-manager.git
-cd student-info-manager/backend
+cd student-info-manager
 
 npm install
 
@@ -60,7 +60,6 @@ npm install
 
 3️⃣ Set up environment variables
 Create a .env file in the backend/ folder:
-
 MONGO_URI=your_mongodb_connection_string
 PORT=5000
 
