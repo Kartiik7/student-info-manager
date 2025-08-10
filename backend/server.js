@@ -9,11 +9,16 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+    console.log(`Server running on ${PORT}`);
 });
 
+app.use(cors({
+    origin: [
+        "http://localhost:5500",
+        "https://newstudentdatamanager.netlify.app/"
+    ]
+}));
 
-app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -31,7 +36,7 @@ const upload = multer({ storage: storage });
 app.use('/uploads', express.static('uploads')); // to access uploaded files
 
 // MongoDB Connection
-mongoose.connect(process.env.MONGO_URI, {
+mongoose.connect(PORT, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
@@ -93,5 +98,5 @@ app.post('/submit', upload.fields([
 });
 
 app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+    console.log(`Server running on ${PORT}`);
 });
