@@ -1,0 +1,333 @@
+body {
+    margin: 0;
+    padding: 20px;
+    background-color: rgb(213, 203, 189);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+.main-container {
+    height: auto;
+    width: 80vw;
+    max-width: 800px;
+    background-color: beige;
+    border: 1px solid saddlebrown;
+    padding: 20px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    /* Centers horizontally */
+    margin-bottom: 15px;
+}
+
+.student-info {
+    height: auto;
+    width: 80vw;
+    max-width: 1200px;
+    background-color: burlywood;
+    border: 2px solid brown;
+    border-radius: 8px;
+    padding: 20px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    /* Centers horizontally */
+}
+
+
+.student-info h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.form-sections {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    grid-auto-rows: auto;
+    grid-auto-columns: auto;
+}
+
+.student-content,
+.student-academic,
+.student-school,
+.student-school2,
+.skills-section {
+    height: auto;
+    width: 100%;
+    background-color: cadetblue;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    padding: 35px 20px 20px 20px;
+    gap: 15px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-bottom: 0;
+    align-items: center;
+    position: relative;
+}
+
+.student-content {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.student-academic {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.student-school {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.student-school2:nth-of-type(4) {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.skills-section {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.student-school2:nth-of-type(6) {
+    grid-column: 1 / -1;
+    grid-row: 4;
+}
+
+/* For any additional sections beyond the 6th */
+.student-school2:nth-of-type(n+7) {
+    grid-column: 1 / -1;
+}
+
+/* Alternative: Use classes for better control */
+.full-width-section {
+    grid-column: 1 / -1;
+}
+
+.left-column {
+    grid-column: 1;
+}
+
+.right-column {
+    grid-column: 2;
+}
+
+.student-content input,
+.student-academic select,
+.student-school input,
+.student-school select,
+.student-school2 input,
+.student-school2 select,
+.skills-section input,
+.skills-section select {
+    height: 35px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.student-content input:focus,
+.student-academic select:focus,
+.student-school input:focus,
+.student-school select:focus,
+.student-school2 input:focus,
+.student-school2 select:focus,
+.skills-section input:focus,
+.skills-section select:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+}
+
+.student-content input:invalid,
+.student-academic select:invalid,
+.student-school input:invalid,
+.student-school select:invalid,
+.student-school2 input:invalid,
+.student-school2 select:invalid,
+.skills-section input:invalid,
+.skills-section select:invalid {
+    border-color: #ff4444;
+}
+
+.student-content input[type="file"],
+.student-school input[type="file"],
+.student-school2 input[type="file"],
+.skills-section input[type="file"] {
+    height: auto;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 2px dashed #ccc;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.student-content input[type="file"]:hover,
+.student-school input[type="file"]:hover,
+.student-school2 input[type="file"]:hover,
+.skills-section input[type="file"]:hover {
+    border-color: #4CAF50;
+    background-color: #f0f8f0;
+}
+
+.student-content h4,
+.student-academic h4,
+.student-school h4,
+.student-school2 h4,
+.skills-section h4 {
+    margin: 0;
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+.student-content h3,
+.student-academic h3,
+.student-school h3,
+.student-school2 h3,
+.skills-section h3 {
+    position: absolute;
+    top: -15px;
+    left: 20px;
+    right: 20px;
+    margin: 0;
+    color: #1a252f;
+    font-weight: 700;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 8px 15px;
+    border-radius: 15px;
+    border: 2px solid #1a252f;
+    font-size: 14px;
+    z-index: 10;
+}
+
+/* .student-academic select{} */
+
+/* Responsive design */
+@media (max-width: 968px) {
+
+    .main-container,
+    .student-info {
+        width: 98vw;
+        margin: auto 0;
+
+    }
+
+    .form-sections {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+
+    .student-content,
+    .student-academic,
+    .student-school,
+    .student-school2,
+    .skills-section {
+        grid-column: 1 2;
+        grid-row: auto !important;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+
+    .student-content h4,
+    .student-academic h4,
+    .student-school h4,
+    .student-school2 h4,
+    .skills-section h4 {
+        text-align: center;
+    }
+
+}
+
+/* Additional mobile-specific adjustments */
+@media (max-width: 768px) {
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .main-container,
+    .student-info,
+    .form-sections {
+        width: 100vw;
+        margin: 0 auto;
+    }
+
+    .form-sections {
+        grid-template-columns: 1fr;
+    }
+
+    .student-content,
+    .student-academic,
+    .student-school,
+    .student-school2,
+    .skills-section {
+        padding: 25px 15px 15px 15px;
+    }
+
+    .student-content h3,
+    .student-academic h3,
+    .student-school h3,
+    .student-school2 h3,
+    .skills-section h3 {
+        font-size: 12px;
+        padding: 6px 12px;
+        top: -12px;
+    }
+
+    .student-content,
+    .student-academic,
+    .student-school,
+    .student-school2,
+    .skills-section {
+        width: 94%;
+        grid-column: 1 / -1 !important;
+    }
+
+}
+
+@media (max-width: 550px) {
+
+    .student-content,
+    .student-academic,
+    .student-school,
+    .student-school2,
+    .skills-section {
+        width: 90%;
+        grid-column: 1 / -1 !important;
+    }
+
+}
+
+@media (min-width: 1265px) {
+    .additional-info {
+        display: flex;
+        flex-wrap: wrap;
+        /* allows moving to next line */
+        gap: 7px;
+    }
+
+    .additional-info h4,
+    .additional-info input,
+    .additional-info {
+        flex: 1 1 calc(50% - 15px);
+        /* 50% width minus the gap */
+        /* background: lightblue; */
+        padding: 20px;
+        text-align: start;
+        box-sizing: border-box;
+        justify-content: space-between;
+    }
+}

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form PAGE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main-container">
+        <h1>Students Data Collection</h1>
+        <p>This form is designed to collect essential information from students for academic or institutional purposes.
+            It includes fields such as full name, email address, phone number, course/program, year of study, and other
+            relevant academic details. The data collected will help in maintaining accurate student records,
+            facilitating communication, and enabling better support services. All submissions are securely handled and
+            stored in a connected backend database to ensure data integrity and privacy.
+        </p>
+    </div>
+    <div class="student-info">
+        <h2>Student's Information</h2>
+        <form id="student-form" method="post" action="http://localhost:3000/submit" enctype="multipart/form-data">
+            <div class="form-sections">
+                <div class="student-content">
+                    <h3>Personal Details</h3>
+                    <h4>Student Name</h4>
+                    <input type="text" name="student-name" id="student-name" required minlength="2" maxlength="50">
+                    <h4>Student UID</h4>
+                    <input type="text" name="student-uid" id="student-uid" required pattern="[A-Za-z0-9]+"
+                        maxlength="20" title="Please enter a valid student ID">
+                    <div style="display: flex; justify-content: space-between;">
+                        <h4>Gender</h4>
+                        <select id="Gender" name="gender" style="width: 45%; height: 22px;" required>
+                            <option value="">Select Gender</option>
+                            <option value="Female">Female</option>
+                            <option value="Male">Male</option>
+                            <option value="other">other</option>
+                        </select>
+                    </div>
+                    <h4>Student Mobile No.</h4>
+                    <input type="tel" name="student-mobile" id="student-no" required pattern="[0-9]{10}" maxlength="10"
+                        title="Please enter a 10-digit mobile number">
+                    <h4>Email ID</h4>
+                    <input type="email" name="emailid" id="email" maxlength="50" title="Please enter a valid Email">
+                </div>
+
+                <div class="student-academic">
+                    <h3>Academic Details</h3>
+                    <h4>Course</h4>
+                    <select id="course" name="course" required>
+                        <option value="">Select Course</option>
+                        <option value="bba">BBA</option>
+                        <option value="be">Bachelor's of Engineering</option>
+                        <option value="mba">MBA</option>
+                    </select>
+                    <h4>Select Department</h4>
+                    <select id="department" name="department" required>
+                        <option value="">Select Department</option>
+                        <option value="ait-cse">AIT-CSE</option>
+                        <option value="cse">CSE</option>
+                        <option value="cse-it">CSE IT</option>
+                        <option value="non-cse">NON CSE</option>
+                    </select>
+                    <h4>Select graduation year:</h4>
+                    <select id="batch" name="batch" required>
+                        <option value="">Select graduation year</option>
+                        <option value="2026">2026</option>
+                        <option value="2027">2027</option>
+                        <option value="2028">2028</option>
+                        <option value="2029">2029</option>
+                    </select>
+                    <h4>Section</h4>
+                    <select id="section" name="section" required>
+                        <option value="">Select Section</option>
+                        <!-- options added by JS -->
+                    </select>
+                </div>
+
+                <div class="student-school">
+                    <h3>12th Grade / Intermediate</h3>
+
+                    <h4>Enter 12th % or CGPA</h4>
+                    <input type="text" id="grade12-marks" name="grade12-marks">
+                    <h4>Board/University</h4>
+                    <select name="grade12-board" id="grade12-board">
+                        <option value="">Select Board</option>
+                        <option value="CBSE">CBSE</option>
+                        <option value="ICSE">ICSE</option>
+                        <option value="State Board">State Board</option>
+                        <option value="others">Others</option>
+                    </select>
+
+                    <h4>Year of Passing</h4>
+                    <input type="number" id="grade12-year" name="grade12-year" min="2000" max="2030">
+
+                    <h4>Upload 12th Certificate</h4>
+                    <input type="file" id="grade12-certificate" name="grade12-certificate" accept=".pdf,.jpg,.png">
+                </div>
+
+                <div class="student-school2">
+                    <h3>10th Grade / Matriculation</h3>
+
+                    <h4>Enter 10th % or CGPA</h4>
+                    <input type="text" id="grade10-marks" name="grade10-marks">
+                    <h4>Board/University</h4>
+                    <select name="grade10-board" id="grade10-board">
+                        <option value="">Select Board</option>
+                        <option value="CBSE">CBSE</option>
+                        <option value="ICSE">ICSE</option>
+                        <option value="State Board">State Board</option>
+                        <option value="others">Others</option>
+                    </select>
+
+                    <h4>Year of Passing</h4>
+                    <input type="number" id="grade10-year" name="grade10-year" min="1990" max="2030">
+
+                    <h4>Upload 10th Certificate</h4>
+                    <input type="file" id="grade10-certificate" name="grade10-certificate" accept=".pdf,.jpg,.png">
+                </div>
+                <div class="skills-section">
+                    <h3>Skills</h3>
+
+                    <h4>Known Programming Languages</h4>
+                    <input type="text" id="program-lan" name="program-lan">
+                    <h4>Platforms Used</h4>
+                    <input type="text" name="platforms-used" id="platforms-used">
+                    <h4>Internship Status</h4>
+                    <select name="internship" id="internship">
+                        <option value="">Select Status</option>
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                    </select>
+
+                    <h4>Internship Proof (if applicable)</h4>
+                    <input type="file" id="internship-proof" name="internship-proof" accept=".pdf,.jpg,.png">
+
+                </div>
+
+                <div class="student-school2 additional-info">
+                    <h3>Additional Information</h3>
+
+                    <h4>Previous College/Institution</h4>
+                    <input type="text" id="prev-college" name="prev-college">
+                    <h4>Transfer Certificate</h4>
+                    <input type="file" id="transfer-cert" name="transfer-cert" accept=".pdf,.jpg,.png">
+
+                    <h4>Caste Certificate (if applicable)</h4>
+                    <input type="file" id="caste-cert" name="caste-cert" accept=".pdf,.jpg,.png">
+
+                    <h4>Submit Application</h4>
+                    <input type="submit" value="Submit Application"
+                        style="background-color: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer;">
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
