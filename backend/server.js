@@ -22,7 +22,7 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// File uploads will be saved in /uploads
+// File uploads will be saved in /uploads folder
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
         cb(null, 'uploads/');
