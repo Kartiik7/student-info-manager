@@ -51,8 +51,8 @@ student-data-collection/
 
 ### 1️⃣ Clone the repository
 ```bash
-git clone https://github.com/<your-username>/<repo-name>.git
-cd <repo-name>/backend
+git clone https://github.com/kartiik7/student-info-manager.git
+cd student-info-manager/backend
 
 npm install
 
@@ -79,4 +79,4 @@ Backend will run on:
 arduino
 Copy
 Edit
-http://localhost:5000
+http://localhost:5000# student-info-manager
