@@ -50,33 +50,19 @@ student-data-collection/
 ## ⚙️ Installation & Setup
 
 ### 1️⃣ Clone the repository
-```bash
 git clone https://github.com/kartiik7/student-info-manager.git
 cd student-info-manager/backend
 
 npm install
 
 2️⃣ Install dependencies
-bash
-Copy
-Edit
 npm install
+
 3️⃣ Set up environment variables
 Create a .env file in the backend/ folder:
 
-ini
-Copy
-Edit
 MONGO_URI=your_mongodb_connection_string
 PORT=5000
-4️⃣ Start the backend server
-bash
-Copy
-Edit
-npm start
-Backend will run on:
 
-arduino
-Copy
-Edit
-http://localhost:5000# student-info-manager
+4️⃣ Start the backend server
+npm start
